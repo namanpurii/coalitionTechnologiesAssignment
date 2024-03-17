@@ -3,6 +3,7 @@ import HeroImageContainer from './components/HeroImageContainer.jsx'
 import Navbar from './components/Navbar.jsx'
 import HistorySection from './components/HistorySection.jsx'
 import TeamSection from './components/TeamSection.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <HistorySection />
       <TeamSection />
+      <Footer />
     </>
   )  
 }
