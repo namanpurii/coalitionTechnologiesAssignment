@@ -5,27 +5,23 @@ import carouselImage2 from  "/carousel_img2.png"
 import "./historySection.css"
 
 const HistorySection = () => {
-  const [activeButton, setActiveButton] = useState([true, false, false, false])
+  const [activeButton, setActiveButton] = useState(0)
   const [someStyle, setSomeStyle] = useState({display: "flex", columnGap: "0.75rem", transition: "all 1s ease-in-out"})
   const buttonClassNames = ["first", "second", "third", "fourth"]
   const twelveCards = [...Array(12)]
 
   useEffect(()=>{
-    let id = 0;
     let n = 4;
     const intervalId = setInterval(()=>{
-      handleButtonClick(id%n);
-      id++;
+      handleButtonClick((activeButton+1)%n);
     }, 5000)
     return ()=>{
       clearInterval(intervalId)
     }
-  }, [])
+  }, [activeButton])
 
   const handleButtonClick = (idx)=>{
-    const newArr = [false, false, false, false]
-    newArr[idx] = true
-    setActiveButton(newArr)
+    setActiveButton(idx)
     if(buttonClassNames[idx] == "first"){
       setSomeStyle({...someStyle, transform: "translateX(-0%)"}) 
     }
@@ -59,7 +55,7 @@ const HistorySection = () => {
             </div>
             <div className='map'>
               {[0, 1, 2, 3].map((_,idx)=> (
-                <button key={idx} className={`${buttonClassNames[idx]}` + (activeButton[idx] ? " active" : "")} onClick={()=> handleButtonClick(idx)}></button>
+                <button key={idx} className={`${buttonClassNames[idx]}` + (activeButton === idx ? " active" : "")} onClick={()=> handleButtonClick(idx)}></button>
               ))}
             </div>
           </div>
