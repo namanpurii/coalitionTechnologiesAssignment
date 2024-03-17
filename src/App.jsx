@@ -1,7 +1,8 @@
 import './App.css'
-import HeroImageContainer from './components/HeroImageContainer'
-import Navbar from './components/Navbar'
-import HistorySection from './components/HistorySection'
+import HeroImageContainer from './components/HeroImageContainer.jsx'
+import Navbar from './components/Navbar.jsx'
+import HistorySection from './components/HistorySection.jsx'
+import TeamSection from './components/TeamSection.jsx'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <HeroImageContainer />
       <Navbar />
       <HistorySection />
+      <TeamSection />
     </>
   )  
 }

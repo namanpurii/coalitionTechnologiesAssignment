@@ -35,9 +35,9 @@ const HistorySection = () => {
   }
 
   return (
-    <div id="history" style={{overflow: "hidden", position: "relative"}}>
-        <img src={bgImage} style={{height: "100%", width: "100%"}} alt="" />
-        <div style={{width: "50vw", position: "absolute", top: "120px", left: "25vw", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center"}}>
+    <div id="history" style={{overflow: "hidden", position: "relative", height: "100vh"}}>
+        <img src={bgImage} style={{height: "100%", width: "100%", objectFit: "cover", objectPosition: "90% 10%"}} alt="" />
+        <div style={{width: "50vw", position: "absolute", top: "62px", left: "25vw", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center"}}>
             <div style={{display: "flex", fontFamily: "'League Gothic', sans-serif", alignItems: "center", justifyContent: "start"}}>
                 <h1 style={{fontSize: "8rem"}}>01.</h1>
                 <h2 style={{fontSize: "3rem", position: "relative", left: -15, top: 5}}>HISTORY</h2>
@@ -53,7 +53,7 @@ const HistorySection = () => {
                     </div>
                   ))}
             </div>
-            <div className='map'>
+            <div className='map' style={{alignSelf: "center"}}>
               {[0, 1, 2, 3].map((_,idx)=> (
                 <button key={idx} className={`${buttonClassNames[idx]}` + (activeButton === idx ? " active" : "")} onClick={()=> handleButtonClick(idx)}></button>
               ))}
